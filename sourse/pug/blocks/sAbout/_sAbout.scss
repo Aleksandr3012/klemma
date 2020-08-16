@@ -77,6 +77,9 @@
 			height: auto;
 		}
 
+		.row {
+			@include roww(15px);
+		}
 	}
 
 	.grid-item {
