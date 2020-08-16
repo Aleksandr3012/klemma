@@ -1,9 +1,5 @@
 "use strict";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var JSCCommon = {
@@ -229,8 +225,6 @@ var JSCCommon = {
 var $ = jQuery;
 
 function eventHandler() {
-	var _defaultSl;
-
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
@@ -242,53 +236,149 @@ function eventHandler() {
 	// добавляет подложку для pixel perfect
 
 	var screenName;
-	screenName = 'main.jpg';
+	screenName = '020.png';
 	screenName ? $(".main-wrapper").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>")) : ''; // /добавляет подложку для pixel perfect
+	// function whenResize() {
+	// 	const topH = document.querySelector('header').scrollHeight;
+	// 	let stickyElement = document.querySelector('.top-nav')
+	// 	window.onscroll = () => {
+	// 		if ($(window).scrollTop() > topH) {
+	// 			stickyElement.classList.add('fixed');
+	// 		} else {
+	// 			stickyElement.classList.remove('fixed');
+	// 		}
+	// 	};
+	// }
+	// window.addEventListener('resize', () => {
+	// 	whenResize();
+	// }, { passive: true });
+	// whenResize();
 
-	function whenResize() {
-		var topH = document.querySelector('header').scrollHeight;
-		var stickyElement = document.querySelector('.top-nav');
-
-		window.onscroll = function () {
-			if ($(window).scrollTop() > topH) {
-				stickyElement.classList.add('fixed');
-			} else {
-				stickyElement.classList.remove('fixed');
-			}
-		};
-	}
-
-	window.addEventListener('resize', function () {
-		whenResize();
-	}, {
-		passive: true
-	});
-	whenResize();
-	var defaultSl = (_defaultSl = {
-		spaceBetween: 0,
+	var sliderReviews = new Swiper('.sliderReviews-js', {
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 30,
+		loop: false,
 		lazy: {
-			loadPrevNext: true
+			loadPrevNext: true,
+			loadPrevNextAmount: 4
 		},
-		watchOverflow: true
-	}, _defineProperty(_defaultSl, "spaceBetween", 0), _defineProperty(_defaultSl, "loop", true), _defineProperty(_defaultSl, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _defineProperty(_defaultSl, "pagination", {
-		el: ' .swiper-pagination',
-		type: 'bullets',
-		clickable: true // renderBullet: function (index, className) {
-		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-		// }
+		navigation: {
+			nextEl: '.sliderReviews-next',
+			prevEl: '.sliderReviews-prev'
+		},
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			clickable: true
+		}
+	});
+	var sliderReviews2 = new Swiper('.sliderReviews-02-js', {
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 30,
+		loop: false,
+		breakpoints: {
+			576: {
+				slidesPerView: 2,
+				freeMode: true,
+				freeModeMomentum: true // spaceBetween: 30,
 
-	}), _defaultSl);
-	var swiper4 = new Swiper('.sBanners__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+			}
+		},
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 4
+		},
+		// navigation: {
+		// 	nextEl: '.sliderReviews-next',
+		// 	prevEl: '.sliderReviews-prev',
+		// },
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			clickable: true
+		}
+	});
+	var sliderReviewsText = new Swiper('.sliderReviewsText-js', _defineProperty({
 		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
+		watchOverflow: true,
+		spaceBetween: 0,
+		loop: false,
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 3
+		},
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			clickable: true
+		},
+		// freeMode: true,
 		freeModeMomentum: true
-	})); // modal window
+	}, "watchOverflow", true));
+	var sliderAbout = new Swiper('.sliderAbout-js', {
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 30,
+		loop: true,
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 3
+		},
+		navigation: {
+			nextEl: '.sliderAbout-next',
+			prevEl: '.sliderAbout-prev'
+		},
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			clickable: true
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2
+			},
+			992: {
+				slidesPerView: 3
+			}
+		}
+	});
+	var sliderAboutTile = new Swiper('.sliderAboutTile-js', {
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 30,
+		loop: true,
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 3
+		},
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			clickable: true
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2
+			},
+			992: {
+				slidesPerView: 3
+			}
+		}
+	}); // $('.grid').masonry({
+	// 	// set itemSelector so .grid-sizer is not used in layout
+	// 	itemSelector: '.grid-item',
+	// 	// use element for option
+	// 	columnWidth: '.grid-sizer',
+	// 	percentPosition: true
+	// })
+	// const headerBlock = new Swiper('.headerSlider-js', {
+	// 	// slidesPerView: 5,
+	// 	slidesPerView: 1,
+	// 	watchOverflow: true,
+	// 	spaceBetween: 0,
+	// 	loop: true,
+	// 	autoplay: {
+	// 		delay: 8000,
+	// 	},
+	// });
+	// modal window
 }
 
 ;

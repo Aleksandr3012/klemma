@@ -1,7 +1,78 @@
+// start .sForm
+.sForm {
+	padding-top: calc(var(--sPT) * 1.2);
+	padding-bottom: calc(var(--sPB) * 4.5);
+	@include media-breakpoint-up(md) {
+		padding-bottom: calc(var(--sPB));
+	}
+	background-color: $blue;
 
-	// start .sForm
-	.sForm {
-		 
+	.container {
+		position: relative;
+	}
+
+	&__col {
+		@include media-breakpoint-up(lg) {
+			width: 22% !important;
+		}
+		@include media-breakpoint-down(lg) {
+			text-align: center;
+			margin-top: rem(-90);
+			margin-bottom: rem(17);
+		}
+	}
+
+	&__coll {
+		@include media-breakpoint-up(lg) {
+			width: 43% !important;
+		}
+		@include media-breakpoint-down(lg) {
+			text-align: center;
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		@include a-cent(y);
+		right: calc(100% + 3vw);
+		z-index: 1;
+		width: 78px;
+		height: 118px;
+	}
+
+	&__btn {
+		@extend .btn;
+		@extend .btn-primary;
+		display: block;
+		margin-bottom: rem(10);
+	}
+
+	&__tel {
+		font-size: rem(20px);
+		font-weight: 700;
+		color: #ffffff;
+	}
+
+	&__yourself {
+		color: #8dd3f3;
+		font-size: rem(14px);
+		margin-bottom: rem(9);
+	}
+
+	h5 {
+		font-family: $mono;
+		color: #ffffff;
+		font-weight: 700;
+		margin-bottom: rem(20);
+		line-height: 1.5;
+		@include media-breakpoint-up(lg) {
+			margin-top: rem(-10);
+		}
+	}
+
+	p {
+		color: #ffffff;
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

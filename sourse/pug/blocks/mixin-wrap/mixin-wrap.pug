@@ -16,6 +16,19 @@ mixin arrow()
 		+icon('chevron-right')
 //- /arrow for swiper-slider
 
+mixin rating()
+	+b.rating(data-total-value="5")
+		+e.item(data-item-value="5")
+			+icon('star')
+		+e.item(data-item-value="4")
+			+icon('star')
+		+e.item(data-item-value="3")
+			+icon('star')
+		+e.item(data-item-value="2")
+			+icon('star')
+		+e.item(data-item-value="1")
+			+icon('star')
+
 mixin ie11()
 	//- modernizer and for ie11
 	 

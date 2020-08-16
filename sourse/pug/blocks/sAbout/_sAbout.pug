@@ -1,0 +1,85 @@
+mixin sAbout()
+	// start sAbout
+	+b.SECTION.sAbout.section#sAbout&attributes(attributes)
+		.container
+			+b.section-title
+				h2 О нас
+			p Клемма - это специализированная магазин по&nbsp;продаже автомобильных аккумуляторов в&nbsp;Новосибирске. Занимается продажей и&nbsp;установкой аккумуляторных батарей для автомобилей уже больше 9&nbsp;лет! Опыт наших специалистов поможет подобрать самый оптимальный вариант с учетом необходимых характеристик и&nbsp;приемлемой цены.
+			+b.sliderAbout
+				.swiper-container.sliderAbout-js
+					.swiper-wrapper
+						mixin slide(i)
+							.swiper-slide
+								picture
+									source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/avout-${i}.webp` type="image/webp")
+									img.swiper-lazy(src="#" data-src=`img/@2x/avout-${i}.jpg`, alt="")
+						+slide('1')
+						+slide('2')
+						+slide('3')
+						+slide('4')
+					.swiper-pagination.d-md-none
+					+e.nav.d-none.d-md-flex
+						.sliderAbout-prev
+							+icon('prev')
+						.sliderAbout-next
+							+icon('next')
+			+b.section-title--second
+				h2 Преимущества сотрудничества с нами
+			ul
+				li На все товары гарантия от 1 до 4 лет 
+				li “Свежие" аккумуляторы (от 1-го до 12 мес с даты выпуска)
+				li Цены намного ниже чем у конкурентов
+				li Для постоянных покупателей выгодные условия, скидки и акции
+				li Граммотный подбор аккумуляторов
+				li Быстрая и бесплатная доставка
+				li Гарантийное обслуживание
+	// end sAbout
+
+mixin sAbout-2()
+	// start sAbout
+	+b.SECTION.sAbout--02.section#sAbout&attributes(attributes)
+		.container
+			+b.section-title
+				h2 О нас
+			p Клемма - это специализированная магазин по&nbsp;продаже автомобильных аккумуляторов в&nbsp;Новосибирске. Занимается продажей и&nbsp;установкой аккумуляторных батарей для автомобилей уже больше 9&nbsp;лет! Опыт наших специалистов поможет подобрать самый оптимальный вариант с учетом необходимых характеристик и&nbsp;приемлемой цены.
+			+b.section-title--second
+				//- h2 Преимущества сотрудничества с нами
+			ul
+				li На все товары гарантия от 1 до 4 лет 
+				li “Свежие" аккумуляторы (от 1-го до 12 мес с даты выпуска)
+				li Цены намного ниже чем у конкурентов
+				li Для постоянных покупателей выгодные условия, скидки и акции
+				li Граммотный подбор аккумуляторов
+				li Быстрая и бесплатная доставка
+				li Гарантийное обслуживание
+		.container-fluid
+			+b.AboutTile
+				.row
+					mixin slide(i)
+						.grid-item&attributes(attributes)
+							picture
+								source(srcset=`img/@2x/webp/about-${i}.webp` type="image/webp")
+								img.res-i(src=`img/@2x/about-${i}.jpg`, alt="")
+					.col-lg-2
+						+slide('1')(class="grid-item--width1")
+						+slide('5')(class="grid-item--width5")
+					.col-lg-5
+						+slide('2')(class="grid-item--width2")
+						.row
+							.col-7
+								+slide('6')(class="grid-item--width6")
+							.col
+								+slide('7')(class="grid-item--width7")
+					.col-lg-2
+						+slide('3')(class="grid-item--width3")
+						+slide('8')(class="grid-item--width8")
+						+slide('9')(class="grid-item--width9")
+					.col-lg-3
+						+slide('4')(class="grid-item--width4")
+						+slide('10')(class="grid-item--width10")
+					//- .swiper-pagination.d-md-none
+					//- +e.nav.d-none.d-md-flex
+					//- 	.sliderAbout-prev
+					//- 		+icon('prev')
+					//- 	.sliderAbout-next
+					//- 		+icon('next')

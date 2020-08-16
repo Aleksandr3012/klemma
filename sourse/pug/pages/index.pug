@@ -3,19 +3,31 @@ extends layout/main.pug
 
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug
+include ../blocks/sAdvantages/_sAdvantages.pug
+include ../blocks/sDelivery/_sDelivery.pug
+include ../blocks/sReviews/_sReviews.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sAssortment/_sAssortment.pug
+include ../blocks/sHelp/_sHelp.pug
 
 block variables
 	- let  mainPage= null
 block title
-	- let  title= 'title'
+	- let  title= 'КЛЕММА'
 	title= title
 block pagecontent
-	+mob-mnu()
+	//- +mob-mnu()
 	+header()
 		//- +top-nav()
 		+topLine()
 	+headerBlock()
+	+sAdvantages()
+	+sDelivery()
+	+sReviews()
 	+sForm()
+	+sAbout()
+	+sAssortment()
+	+sHelp()
 	+sContact()
 	+footer()
 

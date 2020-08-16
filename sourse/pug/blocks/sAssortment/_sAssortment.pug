@@ -1,0 +1,26 @@
+mixin sAssortment()
+	// start sAssortment
+	+b.SECTION.sAssortment.section#sAssortment&attributes(attributes)
+		.container
+			.row
+				+e.col.col-lg-auto
+					+b.section-title
+						h2 Ассортимент 
+					p В&nbsp;нашем магазине в&nbsp;наличии находится более 350&nbsp;моделей, и&nbsp;еще 800 хранятся на&nbsp;складе. Работаем только с&nbsp;надежными и&nbsp;проверенными годами брендами, в&nbsp;качестве которых мы&nbsp;не&nbsp;сомневаемся.
+					+e.allCatalog.d-none.d-lg-inline-block(href="#") Посмотреть весь каталог аккумуляторов
+				.col
+					.row
+						mixin item(i)
+							.col-4.align-self-center
+								img.res-i.lazy(src="#" data-src=`img/@2x/partner-${i}.png` alt="")
+						+item('1')
+						+item('2')
+						+item('3')
+						+item('4')
+						+item('5')
+						+item('6')
+						+item('7')
+						+item('8')
+						+item('9')
+			+e.allCatalog.d-lg-none(href="#") Посмотреть каталог аккумуляторов
+	// end sAssortment

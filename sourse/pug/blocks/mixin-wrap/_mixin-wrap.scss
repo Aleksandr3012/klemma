@@ -34,3 +34,30 @@
 	}
 }
 
+.rating {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+	// margin-bottom: rem(17);
+
+	&__item {
+		@include mt;
+		margin: 0 rem(4);
+		.icon {
+			color: $secondary;
+			font-size: rem(14);
+		}
+	}
+
+	[data-total-value="1"] &__item:nth-child(n + 5),
+	[data-total-value="2"] &__item:nth-child(n + 4),
+	[data-total-value="3"] &__item:nth-child(n + 3),
+	[data-total-value="4"] &__item:nth-child(n + 2),
+	[data-total-value="5"] &__item:nth-child(n + 1){
+		.icon {
+			color: #ffc107;
+		}
+	}
+
+}
+

@@ -3,13 +3,13 @@
 	--fontSizeBase: #{$em-base};
 	@include media-breakpoint-up(md) {
 
-		--sPT: #{rem(80)};
-		--sPB: #{rem(90)};
+		--sPT: #{rem(68)};
+		--sPB: #{rem(59)};
 		--sTPB: #{rem(40)};
 	}
 
-	--sPT: #{rem(80 / 2)};
-	--sPB: #{rem(90 / 2)};
+	--sPT: #{rem(35)};
+	--sPB: #{rem(10)};
 	--sTPB: #{rem(40 / 2)};
 
 

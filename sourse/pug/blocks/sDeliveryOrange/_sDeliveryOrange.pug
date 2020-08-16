@@ -1,0 +1,22 @@
+mixin sDeliveryOrange()
+	// start sDeliveryOrange
+	+b.SECTION.sDeliveryOrange.section#sDeliveryOrange&attributes(attributes)
+		+pic('delivery-orange')
+		.container
+			+b.section-title
+				h2 Как происходит доставка
+				h6 Мы&nbsp;поможет решить вашу проблему. Просто позвоните нам и&nbsp;в&nbsp;течении кратчайшего срока (от&nbsp;30&nbsp;минут) доставим вам новый аккумулятор и&nbsp;поможем с&nbsp;установкой.
+			mixin deliveryItem(title,text)
+				+e.item
+					.h6= title
+					p= text
+			.row
+				.col-md-5
+					+deliveryItem('1. Заявка','Оставьте заявку на сайте или позвоните нам.')
+					+deliveryItem('2. Консультация','Перезвоним и поможем с выбором модели.')
+					+deliveryItem('3. Адрес и время доставки','Вы указываете адрес доставки.')
+				.col-md-6
+					+deliveryItem('4. Доставка и установка','Наш партнер - Яндекс.Доставка привезет вам аккумулятор.')
+					+deliveryItem('5. Скидка','Снимите старый аккумулятор и получите скидку на новый.')
+					+deliveryItem('6. Оплата','Оплатите картой через Яндекс.Кассу.')
+	// end sDeliveryOrange

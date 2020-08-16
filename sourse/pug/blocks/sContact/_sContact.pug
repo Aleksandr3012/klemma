@@ -1,9 +1,20 @@
 mixin sContact()
 	// start sContact
-	+b.SECTION.sContact.section#sContact&attributes(attributes)
+	+b.sContact#sContact&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContact
-				
-			.row
+			.row.align-items-center
+				.col-lg.order-lg-last
+					+e.phone(href="tel:+73833225461")
+						+icon('phone')
+						span +7 (383) 322-54-61
+				.col-lg-5
+					+e.location
+						+icon('place')
+						+e.text
+							p Новосибирск, ул. Добролюбова, 10/1, 1 этаж
+							p Новосибирск, ул. Богдана Хмельницкого, 103 к.1
+				.col-lg-4.order-lg-first
+					+e.logo(href="#")
+						img.lazy.res-i(src="#" data-src="img/@2x/logo-white.png" alt="")
+
 	// end sContact

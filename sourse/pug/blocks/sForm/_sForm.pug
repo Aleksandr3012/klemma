@@ -1,9 +1,18 @@
 mixin sForm()
 	// start sForm
-	+b.SECTION.sForm.section#sForm&attributes(attributes)
+	+b.sForm#sForm&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sForm
-				
+			+e.arrow
+				+pic('form-bg.png')
 			.row
+				+e.col.col-lg-auto
+					img.lazy(src="#" data-src="img/@2x/battery.png" alt="")
+				+e.coll.col-lg-auto
+					h5 Заказать аккумулятор с бесплатной&nbsp;доставкой от&nbsp;15&nbsp;минут
+					p Поможем выбрать оптимальную модель и&nbsp;осуществим быструю доставку до&nbsp;вашего автомобиля.
+				.col-lg
+					+e.btn(href="#headerBlock") Перезвоним через 24 секунды
+					.text-center
+						+e.yourself или позвоните сами по номеру
+						+e.tel(href="tel:+73833225461") +7 (383) 322-54-61
 	// end sForm

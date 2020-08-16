@@ -1,0 +1,36 @@
+mixin sAdvantages()
+	// start sAdvantages
+	+b.sAdvantages#sAdvantages&attributes(attributes)
+		.container
+			mixin item(i,title,t)
+				.col-sm-6.col-lg-3
+					+e.item
+						+icon(`advantages-${i}`)
+						+e.text
+							+e.title= title
+							p= t
+			.row
+				+item('1','Бесплатная доставка','Доставка по Новосибирску с 9:00 до 19:00 от 15 минут.')
+				+item('2','Большой ассортимент','Более 350 аккумуляторов в наличии на складе.')
+				+item('3','Программа утилизации','Сдайте старый получите скидку на новый')
+				+item('4','30 дней на возврат','Заберем сами. Вернем деньги или обменяем.')
+	// end sAdvantages
+
+mixin sAdvantages-2()
+	// start sAdvantages
+	+b.sAdvantages#sAdvantages&attributes(attributes)
+		.container
+			mixin item(i,title,t)
+				.col-sm-6.col-lg-3
+					+e.item
+						+e.imgWrap
+							img.res-i.lazy(src="#" data-src=`img/@2x/advantages-${i}.png` alt="")
+						//- +icon(`advantages-${i}`)
+						+e.text
+							+e.title= title
+							p= t
+			.row
+				+item('5','Бесплатная доставка','Доставка по Новосибирску с 9:00 до 19:00 от 15 минут.')
+				+item('6','Большой ассортимент','Более 350 аккумуляторов в наличии на складе.')
+				+item('7','Программа утилизации','Сдайте старый получите скидку на новый')
+				+item('8','30 дней на возврат','Заберем сами. Вернем деньги или обменяем.')

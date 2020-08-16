@@ -1,0 +1,98 @@
+mixin sReviews()
+	// start sReviews
+	+b.SECTION.sReviews.section#sReviews&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Что говорят о нас #[.d-none.d-sm-inline наши клиенты]
+				
+			+b.sliderReviews
+				.swiper-container.sliderReviews-js
+					.swiper-wrapper
+						mixin slide(i)
+							.swiper-slide
+								+e.slideWrap
+									a(href="https://www.youtube.com/watch?v=9XaS93WMRQQ" data-fancybox="video")
+										picture
+											source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/review-${i}.webp` type="image/webp")
+											img.swiper-lazy(src="#" data-src=`img/@2x/review-${i}.jpg`, alt="")
+						+slide('1')
+						+slide('2')
+						+slide('3')
+						+slide('4')
+					.swiper-pagination.d-md-none
+					+e.nav.d-none.d-md-flex
+						.sliderReviews-prev
+							+icon('prev')
+						.sliderReviews-next
+							+icon('next')
+			.row
+				mixin item(i,t)
+					+e.col.col-lg-auto&attributes(attributes)
+						.row.align-items-center
+							.col-3
+								img.lazy(src="#" data-src=`img/@2x/reviewLink-${i}.png` alt="")
+							.col
+								+rating
+								+e.rating 4.8 из 5 #[span (20 отзывов)]
+								+e.allReviews(href="#")= t
+				+item('1','Читать все отзывы на Flamp')
+				+item('2','Читать все отзывы на Google')
+				+item('3','Читать все отзывы на 2ГИС')(class="d-none d-lg-block")
+
+
+mixin sReviews-2()
+	// start sReviews
+	+b.SECTION.sReviews--02.section#sReviews&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Что говорят о нас #[.d-none.d-sm-inline наши клиенты]
+				
+			+b.sliderReviews--02
+				.swiper-container.sliderReviews-02-js
+					.swiper-wrapper
+						mixin slide(i)
+							.swiper-slide
+								+e.slideWrap
+									a(href="https://www.youtube.com/watch?v=9XaS93WMRQQ" data-fancybox="video")
+										picture
+											source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/review-${i}.webp` type="image/webp")
+											img.swiper-lazy(src="#" data-src=`img/@2x/review-${i}.jpg`, alt="")
+						+slide('1')
+						+slide('2')
+						+slide('3')
+						+slide('4')
+					.swiper-pagination.d-md-none
+					//- +e.nav.d-none.d-md-flex
+					//- 	.sliderReviews-prev
+					//- 		+icon('prev')
+					//- 	.sliderReviews-next
+					//- 		+icon('next')
+			+b.sliderReviewsText
+				.swiper-container.sliderReviewsText-js
+					.swiper-wrapper
+						mixin slide(i,name,date,text)
+							.swiper-slide
+								+e.slide
+									+e.person.d-none.d-lg-flex
+										+e.avatar
+											picture
+												source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/avatar-${i}.webp` type="image/webp")
+												img.swiper-lazy(src="#" data-src=`img/@2x/avatar-${i}.png`, alt="")
+										+e.name.d-none.d-lg-block= name
+									+e.ratingWrap
+										+rating
+										+e.date.d-none.d-lg-block= date
+									+e.text= text
+									+e.name.d-lg-none= name
+									+e.date.d-lg-none= date
+
+						+slide('1','Олег Симочкин','год назад','Быстро. Качественное обслуживание.')
+						+slide('2','Vladimir Bocharov','10 месяцев назад','Отличный магазин. Вежливый квалифицированный продавец.')
+						+slide('3','Сергей Бобыльский','5 месяцев назад','Здорово все вежливо быстро удобно.')
+					.swiper-pagination.d-md-none
+					//- +e.nav.d-none.d-md-flex
+					//- 	.sliderReviews-prev
+					//- 		+icon('prev')
+					//- 	.sliderReviews-next
+					//- 		+icon('next')
+	// end sReviews

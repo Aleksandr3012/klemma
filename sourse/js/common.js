@@ -230,69 +230,169 @@ function eventHandler() {
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 	let screenName;
-	screenName = 'main.jpg';
+	screenName = '020.png';
 	screenName
 		? $(".main-wrapper").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`)
 		: '';
 	// /добавляет подложку для pixel perfect
 
 
-	function whenResize() {
+	// function whenResize() {
 
-		const topH = document.querySelector('header').scrollHeight;
-		let stickyElement = document.querySelector('.top-nav')
-		window.onscroll = () => {
-			if ($(window).scrollTop() > topH) {
+	// 	const topH = document.querySelector('header').scrollHeight;
+	// 	let stickyElement = document.querySelector('.top-nav')
+	// 	window.onscroll = () => {
+	// 		if ($(window).scrollTop() > topH) {
 
-				stickyElement.classList.add('fixed');
-			} else {
-				stickyElement.classList.remove('fixed');
-			}
-		};
+	// 			stickyElement.classList.add('fixed');
+	// 		} else {
+	// 			stickyElement.classList.remove('fixed');
+	// 		}
+	// 	};
 
-	}
+	// }
 
-	window.addEventListener('resize', () => {
-		whenResize();
+	// window.addEventListener('resize', () => {
+	// 	whenResize();
 
-	}, { passive: true });
+	// }, { passive: true });
 
-	whenResize();
-
-
-	let defaultSl = {
-		spaceBetween: 0,
+	// whenResize();
+	const sliderReviews = new Swiper('.sliderReviews-js', {
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 30,
+		loop: false,
 		lazy: {
 			loadPrevNext: true,
+			loadPrevNextAmount: 4,
 		},
-		watchOverflow: true,
-		spaceBetween: 0,
-		loop: true,
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: '.sliderReviews-next',
+			prevEl: '.sliderReviews-prev',
 		},
 		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
+			el: $(this).find('.swiper-pagination'),
 			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
 		},
-	}
-
-	const swiper4 = new Swiper('.sBanners__slider--js', {
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-
 	});
+
+	const sliderReviews2 = new Swiper('.sliderReviews-02-js', {
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 30,
+		loop: false,
+		breakpoints: { 
+			576: { 
+				slidesPerView: 2,
+				freeMode: true,
+				freeModeMomentum: true,
+				// spaceBetween: 30,
+			},
+		},
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 4,
+		},
+		// navigation: {
+		// 	nextEl: '.sliderReviews-next',
+		// 	prevEl: '.sliderReviews-prev',
+		// },
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			clickable: true,
+		},
+	});
+
+	const sliderReviewsText = new Swiper('.sliderReviewsText-js', {
+		slidesPerView: 'auto',
+		watchOverflow: true,
+		spaceBetween: 0,
+		loop: false,
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 3,
+		},
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			clickable: true,
+		},
+		// freeMode: true,
+		freeModeMomentum: true,
+		// spaceBetween: 30,
+		watchOverflow: true,
+	});
+
+	const sliderAbout = new Swiper('.sliderAbout-js', {
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 30,
+		loop: true,
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 3,
+		},
+		navigation: {
+			nextEl: '.sliderAbout-next',
+			prevEl: '.sliderAbout-prev',
+		},
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			clickable: true,
+		},
+		breakpoints: { 
+			576: { 
+				slidesPerView: 2,
+			},
+			
+			992: { 
+				slidesPerView: 3,
+			},
+		},
+	});
+
+	const sliderAboutTile = new Swiper('.sliderAboutTile-js', {
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 30,
+		loop: true,
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 3,
+		},
+		pagination: {
+			el: $(this).find('.swiper-pagination'),
+			clickable: true,
+		},
+		breakpoints: { 
+			576: { 
+				slidesPerView: 2,
+			},
+			
+			992: { 
+				slidesPerView: 3,
+			},
+		},
+	});
+
+	// $('.grid').masonry({
+	// 	// set itemSelector so .grid-sizer is not used in layout
+	// 	itemSelector: '.grid-item',
+	// 	// use element for option
+	// 	columnWidth: '.grid-sizer',
+	// 	percentPosition: true
+	// })
+
+	// const headerBlock = new Swiper('.headerSlider-js', {
+	// 	// slidesPerView: 5,
+	// 	slidesPerView: 1,
+	// 	watchOverflow: true,
+	// 	spaceBetween: 0,
+	// 	loop: true,
+	// 	autoplay: {
+	// 		delay: 8000,
+	// 	},
+	// });
 	// modal window
 
 };

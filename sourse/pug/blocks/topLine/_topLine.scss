@@ -1,10 +1,46 @@
 // start .topLine
 .topLine {
-	padding-top: rem(23);
-	padding-bottom: rem(23);
-
+	padding-top: rem(15);
+	@include media-breakpoint-up(md) {
+		padding-top: rem(20);
+	}
+	padding-bottom: rem(15);
+	.container {
+		@include media-breakpoint-down(lg) {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
 	&__phone {
-		font-size: rem(25);
+		font-size: rem(14);
+		@include media-breakpoint-up(md) {
+			font-size: rem(25);
+		}
+
+		.icon {
+			font-size: rem(15);
+			@include media-breakpoint-only(lg) {
+				font-size: rem(30);
+			}
+			@include media-breakpoint-up(lg){
+				margin-bottom: rem(10);
+			}
+			margin-bottom: rem(3);
+			margin-right: rem(5);
+		}
+
+		span {
+			font-weight: 700;
+			color: $body-color;
+		}
+	}
+
+
+	&__logo {
+		display: block;
+		@include media-breakpoint-down(md) {
+			max-width: rem(118);
+		}
 	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

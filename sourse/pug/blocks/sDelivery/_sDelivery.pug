@@ -1,0 +1,22 @@
+mixin sDelivery()
+	// start sDelivery
+	+b.SECTION.sDelivery.section#sDelivery&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Как происходит доставка
+				.h6 Помогаем подбирать надежные аккумуляторы с&nbsp;2011&nbsp;года. <br> Просто позвоните нам, поможем с&nbsp;выбором и&nbsp;доставим аккумулятор от&nbsp;15&nbsp;минут.
+			.row
+				mixin item(i,t)
+					.col-6.col-sm-4.col-lg-2
+						+e.imgWrap
+							+e.numb= i
+							+pic(`delivery-${i}.png`)
+						p= t
+				+item('1','Оставьте заявку на сайте или позвоните нам.')
+				+item('2','Перезвоним и поможем с выбором модели.')
+				+item('3','Вы указываете адрес и время доставки.')
+				+item('4','Курьер привезет и установит аккумулятор.')
+				+item('5','Сдайте старый аккумулятор и получите скидку на новый.')
+				+item('6','Оплатите на месте наличными или картой.')
+			+e.btn(href="#headerBlock") мне нужен новый аккумулятор. Перезвоните мне.
+	// end sDelivery

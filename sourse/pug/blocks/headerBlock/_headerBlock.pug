@@ -1,10 +1,33 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
+		+pic('headerBanner-1')(class="picture-bg")
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
+			+b.section-title
+				h1 Бесплатная доставка&nbsp;и&nbsp;установка аккумулятора в&nbsp;Новосибирске
+					span от 30 минут 
+				.h6 Оставьте контакты и&nbsp;мы&nbsp;перезвоним. Подберем вам надежный аккумулятор и&nbsp;доставим его и&nbsp;установим бесплатно в&nbsp;ваш автомобиль.
+			+form-wrap
+				+input('Ваш телефон','tel')
+				+e.btn.btn.btn-primary(type="button") Перезвоните мне
 
-			.row
+
+
+mixin headerBlock-2()
+	// start headerBlock
+	+b.headerBlock--black.section#headerBlock&attributes(attributes)
+		+pic('headerBanner-8')(class="picture-bg")
+		.container
+			+b.section-title
+				h1 Аккумуляторы в Новосибирске. Бесплатная доставка до вашего автомобиля от 15 минут.
+				.h6 Оставьте контакты и&nbsp;мы&nbsp;перезвоним. Подбереме вам надежный аккумулятор и&nbsp;доставим его прямо к&nbsp;вашей машине.
+			+form-wrap
+				+input('Ваш телефон','tel')
+				+e.btn.btn.btn-primary(type="button") Перезвоните мне
+			+e.delivery
+				span Партнер доставки
+				img(src="img/@2x/yandex-white.png", alt="")
+
+
 						
 	// end headerBlock

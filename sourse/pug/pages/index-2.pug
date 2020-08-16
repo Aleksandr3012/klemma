@@ -1,0 +1,37 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sAdvantages/_sAdvantages.pug
+include ../blocks/sDelivery/_sDelivery.pug
+include ../blocks/sReviews/_sReviews.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sAssortment/_sAssortment.pug
+include ../blocks/sHelp/_sHelp.pug
+include ../blocks/sDeliveryOrange/_sDeliveryOrange.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'КЛЕММА'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	+header()
+		//- +top-nav()
+		+topLine()
+	+headerBlock-2()
+	+sAdvantages-2()
+	+sDeliveryOrange()
+	//- +sDelivery()
+	+sReviews-2()
+	+sForm()
+	+sAbout-2()
+	+sAssortment(class="bg-white")
+	+sHelp-2()
+	+sContact(class="bg-black")
+	+footer()
+
+
+	
