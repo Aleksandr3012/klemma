@@ -67,10 +67,11 @@
 	@include media-breakpoint-down(sm) {}
 
 	&--02 {
-		.swiper-wrapper {
-			flex-wrap: wrap;
-			transform: none !important;
-		}
+		padding-bottom: 0;
+		// .swiper-wrapper {
+		// 	flex-wrap: wrap;
+		// 	transform: none !important;
+		// }
 
 		img {
 			max-width: 100%;
@@ -103,6 +104,7 @@
 	// 	width: ($v * 333);
 	// }
 		.AboutTile{
+			padding-top: rem(40);
 			margin-left: auto;
 			margin-right: auto;
 			max-width: 1410px;
@@ -273,5 +275,10 @@
 		&-active {
 			background-color: $blue;
 		}
+	}
+
+	&--02 {
+		margin-bottom: 0;
+		padding-top: rem(30);
 	}
 }

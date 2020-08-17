@@ -215,8 +215,10 @@
 		text-align: center;
 	}
 	.swiper-slide {
-		// max-width: rem(320);
 		@include media-breakpoint-up(lg) {
+			max-width: rem(300);
+		}
+		@include media-breakpoint-up(xl) {
 			max-width: rem(400);
 		}
 	}

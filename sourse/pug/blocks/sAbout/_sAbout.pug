@@ -10,9 +10,10 @@ mixin sAbout()
 					.swiper-wrapper
 						mixin slide(i)
 							.swiper-slide
-								picture
-									source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/avout-${i}.webp` type="image/webp")
-									img.swiper-lazy(src="#" data-src=`img/@2x/avout-${i}.jpg`, alt="")
+								a(href=`img/@2x/about-${i}.jpg` data-fancybox="gal")
+									picture
+										source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/avout-${i}.webp` type="image/webp")
+										img.swiper-lazy(src="#" data-src=`img/@2x/avout-${i}.jpg`, alt="")
 						+slide('1')
 						+slide('2')
 						+slide('3')
@@ -53,6 +54,26 @@ mixin sAbout-2()
 				li Быстрая и бесплатная доставка
 				li Гарантийное обслуживание
 		.container-fluid
+			+b.sliderAbout--02.d-md-none
+				.swiper-container.sliderAbout-js
+					.swiper-wrapper
+						mixin slideAbout(i)
+							.swiper-slide
+								a(href=`img/@2x/about-${i}.jpg` data-fancybox="gal")
+									picture
+										source.swiper-lazy(srcset="#" data-srcset=`img/@2x/webp/about-${i}.webp` type="image/webp")
+										img.swiper-lazy(src="#" data-src=`img/@2x/about-${i}.jpg`, alt="")
+						+slideAbout('1')
+						+slideAbout('2')
+						+slideAbout('3')
+						+slideAbout('4')
+						+slideAbout('5')
+						+slideAbout('6')
+						+slideAbout('7')
+						+slideAbout('8')
+						+slideAbout('9')
+						+slideAbout('10')
+					.swiper-pagination.d-md-none
 			+b.AboutTile
 				.d-none.d-md-block
 					.row
@@ -79,7 +100,6 @@ mixin sAbout-2()
 						+e.col-4.col-lg-auto.col-6
 							+slide('4')(class="grid-item--width4")
 							+slide('10')(class="grid-item--width10")
-					//- .swiper-pagination.d-md-none
 					//- +e.nav.d-none.d-md-flex
 					//- 	.sliderAbout-prev
 					//- 		+icon('prev')

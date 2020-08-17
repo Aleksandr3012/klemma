@@ -59,56 +59,43 @@ var JSCCommon = {
 		if (linkModal) addData();
 	},
 	// /modalCall
-	toggleMenu: function toggleMenu() {
-		var _this = this;
-
-		if (this.btnToggleMenuMobile) {
-			this.btnToggleMenuMobile.forEach(function (element) {
-				element.addEventListener('click', function () {
-					_this.btnToggleMenuMobile.forEach(function (element) {
-						return element.classList.toggle("on");
-					});
-
-					_this.menuMobile.classList.toggle("active");
-
-					document.body.classList.toggle("fixed");
-					return false;
-				});
-			});
-		}
-	},
-	closeMenu: function closeMenu() {
-		if (this.menuMobile) {
-			this.btnToggleMenuMobile.forEach(function (element) {
-				element.classList.remove("on");
-			});
-			this.menuMobile.classList.remove("active");
-			document.body.classList.remove("fixed");
-		}
-	},
-	mobileMenu: function mobileMenu() {
-		var _this2 = this;
-
-		if (this.menuMobileLink) {
-			this.toggleMenu();
-			document.addEventListener('mouseup', function (event) {
-				var container = event.target.closest(".menu-mobile--js.active"); // (1)
-
-				if (!container) {
-					_this2.closeMenu();
-				}
-			}, {
-				passive: true
-			});
-			window.addEventListener('resize', function () {
-				if (window.matchMedia("(min-width: 992px)").matches) {
-					JSCCommon.closeMenu();
-				}
-			}, {
-				passive: true
-			});
-		}
-	},
+	// toggleMenu() {
+	// 	if (this.btnToggleMenuMobile) {
+	// 		this.btnToggleMenuMobile.forEach(element => {
+	// 			element.addEventListener('click', () => {
+	// 				this.btnToggleMenuMobile.forEach(element => element.classList.toggle("on"));
+	// 				this.menuMobile.classList.toggle("active");
+	// 				document.body.classList.toggle("fixed");
+	// 				return false;
+	// 			});
+	// 		});
+	// 	}
+	// },
+	// closeMenu() {
+	// 	if (this.menuMobile) {
+	// 		this.btnToggleMenuMobile.forEach(element => {
+	// 			element.classList.remove("on");
+	// 		});
+	// 		this.menuMobile.classList.remove("active");
+	// 		document.body.classList.remove("fixed");
+	// 	}
+	// },
+	// mobileMenu() {
+	// 	if (this.menuMobileLink) {
+	// 		this.toggleMenu();
+	// 		document.addEventListener('mouseup', (event) => {
+	// 			let container = event.target.closest(".menu-mobile--js.active"); // (1)
+	// 			if (!container) {
+	// 				this.closeMenu();
+	// 			}
+	// 		}, { passive: true });
+	// 		window.addEventListener('resize', () => {
+	// 			if (window.matchMedia("(min-width: 992px)").matches) {
+	// 				JSCCommon.closeMenu();
+	// 			}
+	// 		}, { passive: true });
+	// 	}
+	// },
 	// /mobileMenu
 	// табы  .
 	tabscostume: function tabscostume(tab) {
@@ -152,50 +139,48 @@ var JSCCommon = {
 			$("body").prepend('<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>');
 		}
 	},
-	sendForm: function sendForm() {
-		var gets = function () {
-			var a = window.location.search;
-			var b = new Object();
-			var c;
-			a = a.substring(1).split("&");
-
-			for (var i = 0; i < a.length; i++) {
-				c = a[i].split("=");
-				b[c[0]] = c[1];
-			}
-
-			return b;
-		}(); // form
-
-
-		$("form").submit(function (e) {
-			e.preventDefault();
-			var th = $(this);
-			var data = th.serialize();
-			th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-			$.ajax({
-				url: 'action.php',
-				type: 'POST',
-				data: data
-			}).done(function (data) {
-				$.fancybox.close();
-				$.fancybox.open({
-					src: '#modal-thanks',
-					type: 'inline'
-				}); // window.location.replace("/thanks.html");
-
-				setTimeout(function () {
-					// Done Functions
-					th.trigger("reset"); // $.magnificPopup.close();
-					// ym(53383120, 'reachGoal', 'zakaz');
-					// yaCounter55828534.reachGoal('zakaz');
-				}, 4000);
-			}).fail(function () {});
-		});
-	},
+	// sendForm() {
+	// 	var gets = (function () {
+	// 		var a = window.location.search;
+	// 		var b = new Object();
+	// 		var c;
+	// 		a = a.substring(1).split("&");
+	// 		for (var i = 0; i < a.length; i++) {
+	// 			c = a[i].split("=");
+	// 			b[c[0]] = c[1];
+	// 		}
+	// 		return b;
+	// 	})();
+	// 	// form
+	// 	$("form").submit(function (e) {
+	// 		e.preventDefault();
+	// 		const th = $(this);
+	// 		var data = th.serialize();
+	// 		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
+	// 		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
+	// 		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
+	// 		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
+	// 		$.ajax({
+	// 			url: 'action.php',
+	// 			type: 'POST',
+	// 			data: data,
+	// 		}).done(function (data) {
+	// 			$.fancybox.close();
+	// 			$.fancybox.open({
+	// 				src: '#modal-thanks',
+	// 				type: 'inline'
+	// 			});
+	// 			// window.location.replace("/thanks.html");
+	// 			setTimeout(function () {
+	// 				// Done Functions
+	// 				th.trigger("reset");
+	// 				// $.magnificPopup.close();
+	// 				// ym(53383120, 'reachGoal', 'zakaz');
+	// 				// yaCounter55828534.reachGoal('zakaz');
+	// 			}, 4000);
+	// 		}).fail(function () { });
+	// 	});
+	// },
 	heightwindow: function heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		var vh = window.innerHeight * 0.01; // Then we set the value in the --vh custom property to the root of the document
@@ -209,30 +194,28 @@ var JSCCommon = {
 		}, {
 			passive: true
 		});
-	},
-	animateScroll: function animateScroll() {
-		// листалка по стр
-		$(" .top-nav li a, .scroll-link").click(function () {
-			var elementClick = $(this).attr("href");
-			var destination = $(elementClick).offset().top;
-			$('html, body').animate({
-				scrollTop: destination
-			}, 1100);
-			return false;
-		});
-	}
+	} // animateScroll() {
+	// 	// листалка по стр
+	// 	$(" .top-nav li a, .scroll-link").click(function () {
+	// 		const elementClick = $(this).attr("href");
+	// 		const destination = $(elementClick).offset().top;
+	// 		$('html, body').animate({ scrollTop: destination }, 1100);
+	// 		return false;
+	// 	});
+	// }
+
 };
 var $ = jQuery;
 
 function eventHandler() {
-	JSCCommon.modalCall();
-	JSCCommon.tabscostume('tabs');
-	JSCCommon.mobileMenu();
+	JSCCommon.modalCall(); // JSCCommon.tabscostume('tabs');
+	// JSCCommon.mobileMenu();
+
 	JSCCommon.inputMask();
-	JSCCommon.ifie();
-	JSCCommon.sendForm();
-	JSCCommon.heightwindow();
-	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile();
+	JSCCommon.ifie(); // JSCCommon.sendForm();
+
+	JSCCommon.heightwindow(); // JSCCommon.animateScroll();
+	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
 	var screenName;
@@ -301,14 +284,14 @@ function eventHandler() {
 	var sliderReviewsText = new Swiper('.sliderReviewsText-js', _defineProperty({
 		slidesPerView: 'auto',
 		watchOverflow: true,
-		spaceBetween: 0,
+		spaceBetween: 10,
 		loop: false,
 		lazy: {
 			loadPrevNext: true,
 			loadPrevNextAmount: 3
 		},
 		pagination: {
-			el: $(this).find('.swiper-pagination'),
+			el: $(this).find('.swiper-pagin'),
 			clickable: true
 		},
 		// freeMode: true,

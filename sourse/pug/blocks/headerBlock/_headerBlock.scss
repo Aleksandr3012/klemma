@@ -151,13 +151,13 @@
 					margin-left: rem(-200) !important;
 				}
 				@include media-breakpoint-only(md) {
-					margin-left: rem(-200) !important;
+					margin-left: rem(-160) !important;
 				}
 				@include media-breakpoint-only(sm) {
-					margin-left: rem(-380) !important;
+					margin-left: rem(-205) !important;
 				}
 				@include media-breakpoint-down(sm) {
-					margin-left: rem(-620) !important;
+					margin-left: rem(-390) !important;
 				}
 			}
 		}

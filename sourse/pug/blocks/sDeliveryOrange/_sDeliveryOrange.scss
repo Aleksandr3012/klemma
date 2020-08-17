@@ -69,7 +69,10 @@
 				margin-left: -25%;
 			}
 			@include media-breakpoint-only(md) {
-				margin-left: -40%;
+				margin-left: rem(-500);
+			}
+			@include media-breakpoint-only(sm) {
+				margin-left: rem(-800);
 			}
 			@include media-breakpoint-down(sm) {
 				margin-left: rem(-1050);
