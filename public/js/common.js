@@ -217,10 +217,12 @@ function eventHandler() {
 	JSCCommon.heightwindow(); // JSCCommon.animateScroll();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	var screenName;
-	screenName = '011.png';
-	screenName ? $(".main-wrapper").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>")) : ''; // /добавляет подложку для pixel perfect
+	// let screenName;
+	// screenName = '011.png';
+	// screenName
+	// 	? $(".main-wrapper").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`)
+	// 	: '';
+	// /добавляет подложку для pixel perfect
 	// function whenResize() {
 	// 	const topH = document.querySelector('header').scrollHeight;
 	// 	let stickyElement = document.querySelector('.top-nav')
