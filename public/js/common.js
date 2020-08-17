@@ -4,9 +4,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
-	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
-	menuMobile: document.querySelector(".menu-mobile--js"),
-	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
+	// btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
+	// menuMobile: document.querySelector(".menu-mobile--js"),
+	// menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 	modalCall: function modalCall() {
 		$(".link-modal").fancybox({
 			arrows: false,
@@ -98,30 +98,31 @@ var JSCCommon = {
 	// },
 	// /mobileMenu
 	// табы  .
-	tabscostume: function tabscostume(tab) {
-		var tabs = {
-			Btn: [].slice.call(document.querySelectorAll(".".concat(tab, "__btn"))),
-			BtnParent: [].slice.call(document.querySelectorAll(".".concat(tab, "__caption"))),
-			Content: [].slice.call(document.querySelectorAll(".".concat(tab, "__content")))
-		};
-		tabs.Btn.forEach(function (element, index) {
-			element.addEventListener('click', function () {
-				if (!element.classList.contains('active')) {
-					var siblings = element.parentNode.querySelector(".".concat(tab, "__btn.active"));
-					var siblingsContent = tabs.Content[index].parentNode.querySelector(".".concat(tab, "__content.active"));
-					siblings.classList.remove('active');
-					siblingsContent.classList.remove('active');
-					element.classList.add('active');
-					tabs.Content[index].classList.add('active');
-				}
-			});
-		}); // $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-		// 	$(this)
-		// 		.addClass('active').siblings().removeClass('active')
-		// 		.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-		// 		.eq($(this).index()).fadeIn().addClass('active');
-		// });
-	},
+	// tabscostume(tab) {
+	// 	let tabs = {
+	// 		Btn: [].slice.call(document.querySelectorAll(`.${tab}__btn`)),
+	// 		BtnParent: [].slice.call(document.querySelectorAll(`.${tab}__caption`)),
+	// 		Content: [].slice.call(document.querySelectorAll(`.${tab}__content`)),
+	// 	}
+	// 	tabs.Btn.forEach((element, index) => {
+	// 		element.addEventListener('click', () => {
+	// 			if (!element.classList.contains('active')) {
+	// 				let siblings = element.parentNode.querySelector(`.${tab}__btn.active`);
+	// 				let siblingsContent = tabs.Content[index].parentNode.querySelector(`.${tab}__content.active`);
+	// 				siblings.classList.remove('active');
+	// 				siblingsContent.classList.remove('active')
+	// 				element.classList.add('active');
+	// 				tabs.Content[index].classList.add('active');
+	// 			} 
+	// 		})
+	// 	})
+	// 	// $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
+	// 	// 	$(this)
+	// 	// 		.addClass('active').siblings().removeClass('active')
+	// 	// 		.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
+	// 	// 		.eq($(this).index()).fadeIn().addClass('active');
+	// 	// });
+	// },
 	// /табы
 	inputMask: function inputMask() {
 		// mask for input
@@ -239,6 +240,32 @@ function eventHandler() {
 	// }, { passive: true });
 	// whenResize();
 
+	var sliderAbout = new Swiper('.sliderAbout-js', {
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 30,
+		loop: true,
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 3
+		},
+		navigation: {
+			nextEl: '.sliderAbout-js .sliderAbout-next',
+			prevEl: '.sliderAbout-js .sliderAbout-prev'
+		},
+		pagination: {
+			el: $(this).find('.sliderAbout-js .sliderAbout__pugin'),
+			clickable: true
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2
+			},
+			992: {
+				slidesPerView: 3
+			}
+		}
+	});
 	var sliderReviews = new Swiper('.sliderReviews-js', {
 		slidesPerView: 1,
 		watchOverflow: true,
@@ -249,8 +276,8 @@ function eventHandler() {
 			loadPrevNextAmount: 4
 		},
 		navigation: {
-			nextEl: '.sliderReviews-next',
-			prevEl: '.sliderReviews-prev'
+			nextEl: '.sliderReviews-js .sliderReviews-next',
+			prevEl: '.sliderReviews-js .sliderReviews-prev'
 		},
 		pagination: {
 			el: $(this).find('.swiper-pagination'),
@@ -299,32 +326,6 @@ function eventHandler() {
 		// freeMode: true,
 		freeModeMomentum: true
 	}, "watchOverflow", true));
-	var sliderAbout = new Swiper('.sliderAbout-js', {
-		slidesPerView: 1,
-		watchOverflow: true,
-		spaceBetween: 30,
-		loop: true,
-		lazy: {
-			loadPrevNext: true,
-			loadPrevNextAmount: 3
-		},
-		navigation: {
-			nextEl: '.sliderAbout-next',
-			prevEl: '.sliderAbout-prev'
-		},
-		pagination: {
-			el: $(this).find('.swiper-pagination'),
-			clickable: true
-		},
-		breakpoints: {
-			576: {
-				slidesPerView: 2
-			},
-			992: {
-				slidesPerView: 3
-			}
-		}
-	});
 	var sliderAboutTile = new Swiper('.sliderAboutTile-js', {
 		slidesPerView: 1,
 		watchOverflow: true,

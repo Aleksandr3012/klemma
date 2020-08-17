@@ -19,7 +19,7 @@
 
 		.icon {
 			font-size: rem(15);
-			@include media-breakpoint-only(lg) {
+			@include media-breakpoint-up(lg) {
 				font-size: rem(30);
 			}
 			@include media-breakpoint-up(lg){
