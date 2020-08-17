@@ -236,7 +236,7 @@ function eventHandler() {
 	// добавляет подложку для pixel perfect
 
 	var screenName;
-	screenName = '020.png';
+	screenName = '011.png';
 	screenName ? $(".main-wrapper").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>")) : ''; // /добавляет подложку для pixel perfect
 	// function whenResize() {
 	// 	const topH = document.querySelector('header').scrollHeight;

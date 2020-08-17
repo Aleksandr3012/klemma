@@ -73,6 +73,17 @@
 	p {
 		color: #ffffff;
 	}
+
+	&--02 {
+		.sForm__col {
+			@include media-breakpoint-down(lg) {
+				width: 43% !important;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
