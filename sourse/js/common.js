@@ -342,7 +342,7 @@ function eventHandler() {
 			loadPrevNextAmount: 3,
 		},
 		pagination: {
-			el: $(this).find('.swiper-pagin'),
+			el: '.sliderReviewsText-js .swiper-pagin',
 			clickable: true,
 		},
 		// freeMode: true,
@@ -361,7 +361,7 @@ function eventHandler() {
 			loadPrevNextAmount: 3,
 		},
 		pagination: {
-			el: '.sliderReviewsText-js .swiper-pagination',
+			el: '.sliderAboutTile-js .swiper-pagination',
 			clickable: true,
 		},
 		breakpoints: { 
