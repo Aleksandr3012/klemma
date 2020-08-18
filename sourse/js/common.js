@@ -272,7 +272,7 @@ function eventHandler() {
 			prevEl: '.sliderAbout-js .sliderAbout-prev',
 		},
 		pagination: {
-			el: $(this).find('.sliderAbout-js .sliderAbout__pugin'),
+			el: '.sliderAbout-js .sliderAbout__pugin',
 			clickable: true,
 		},
 		breakpoints: { 
@@ -300,7 +300,7 @@ function eventHandler() {
 			prevEl: '.sliderReviews-js .sliderReviews-prev',
 		},
 		pagination: {
-			el: $(this).find('.swiper-pagination'),
+			el: '.sliderReviews-js .swiper-pagination',
 			clickable: true,
 		},
 	});
@@ -327,7 +327,7 @@ function eventHandler() {
 		// 	prevEl: '.sliderReviews-prev',
 		// },
 		pagination: {
-			el: $(this).find('.swiper-pagination'),
+			el: '.sliderReviews-02-js .swiper-pagination',
 			clickable: true,
 		},
 	});
@@ -361,7 +361,7 @@ function eventHandler() {
 			loadPrevNextAmount: 3,
 		},
 		pagination: {
-			el: $(this).find('.swiper-pagination'),
+			el: '.sliderReviewsText-js .swiper-pagination',
 			clickable: true,
 		},
 		breakpoints: { 
