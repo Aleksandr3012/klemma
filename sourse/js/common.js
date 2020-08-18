@@ -290,7 +290,7 @@ function eventHandler() {
 		slidesPerView: 1,
 		watchOverflow: true,
 		spaceBetween: 30,
-		loop: false,
+		loop: true,
 		lazy: {
 			loadPrevNext: true,
 			loadPrevNextAmount: 4,

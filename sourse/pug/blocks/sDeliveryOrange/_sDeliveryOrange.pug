@@ -1,7 +1,10 @@
 mixin sDeliveryOrange()
 	// start sDeliveryOrange
 	+b.SECTION.sDeliveryOrange.section#sDeliveryOrange&attributes(attributes)
-		+pic('delivery-orange','','')
+		//- +pic('delivery-orange','','','')
+		picture
+			source(srcset=`img/@2x/webp/delivery-orange.webp` type="image/webp")
+			img(src=`img/@2x/delivery-orange.jpg`, alt="")
 		.container
 			+b.section-title
 				h2 Как происходит доставка
